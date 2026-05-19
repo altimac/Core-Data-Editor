@@ -67,7 +67,7 @@ BOOL CDEIsIntegerAttributeType(NSAttributeType type) {
 // Returns the class for the attribute type
 - (Class)tableCellViewClass_cde {
     if(self.isTransient) {
-        return NO;
+        return Nil;
     }
     return [[self class] tableCellViewClassForAttributeType_cde:self.attributeType];
 }
