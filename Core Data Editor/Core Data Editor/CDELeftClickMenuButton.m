@@ -10,14 +10,14 @@
     if(self.isEnabled == NO) {
         return;
     }
-    [self setState:NSOnState];
+	[self setState:NSControlStateValueOn];
     [self highlight:YES];
     
     if([self menu]) {
         [NSMenu popUpContextMenu:[self menu] withEvent:theEvent forView:self];
     }
     
-    [self setState:NSOffState];
+	[self setState:NSControlStateValueOff];
     [self highlight:NO];
 }
 

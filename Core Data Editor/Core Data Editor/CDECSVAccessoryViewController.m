@@ -38,7 +38,7 @@
 }
 
 - (BOOL)firstLineContainsColumnNames {
-    return (self.firstLineContainsColumnNamesCheckbox.state == NSOnState);
+	return (self.firstLineContainsColumnNamesCheckbox.state == NSControlStateValueOn);
 }
 
 - (NSString *)dateFormat {

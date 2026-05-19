@@ -158,7 +158,7 @@
             NSAttributeDescription *attribute = [self attributeDescriptionForTableColumn:tableColumn];
             NSAttributeType type = attribute.attributeType;
             if(type == NSBooleanAttributeType) {
-                objectValue = @(NSMixedState);
+				objectValue = @(NSControlStateValueMixed);
             }
             if(type == NSStringAttributeType) {
                 objectValue = [NSNull null];
@@ -356,16 +356,16 @@
     NSInteger column = [self.tableView columnForView_cde:sender];
     NSAssert(row != -1 && column != -1, @"Row or column invalid.");
 
-    NSCellStateValue state = [sender state];
+	NSControlStateValue state = [sender state];
     id value = nil;
     switch (state) {
-        case NSOnState:
+        case NSControlStateValueOn:
             value = @YES;
             break;
-        case NSOffState:
+		case NSControlStateValueOff:
             value = @NO;
             break;
-        case NSMixedState:
+		case NSControlStateValueMixed:
             value = nil;
             break;
         default:

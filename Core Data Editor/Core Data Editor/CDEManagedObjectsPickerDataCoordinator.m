@@ -83,8 +83,8 @@
 
         NSSortDescriptor *s = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:NO comparator:^NSComparisonResult(NSManagedObject *obj1, NSManagedObject *obj2) {
             // Easy case: obj1 or obj2 are selected
-            BOOL obj1IsSelected = [_selectedManagedObjects containsObject:obj1];
-            BOOL obj2IsSelected = [_selectedManagedObjects containsObject:obj2];
+			BOOL obj1IsSelected = [self->_selectedManagedObjects containsObject:obj1];
+			BOOL obj2IsSelected = [self->_selectedManagedObjects containsObject:obj2];
             
             if(obj1IsSelected && obj2IsSelected == NO) {
                 return NSOrderedDescending;
@@ -158,7 +158,7 @@
 
     NSInteger state = [sender state];
     NSManagedObject *object = [self managedObjectAtIndex:row];
-    if(state == NSOnState) {
+    if(state == NSControlStateValueOn) {
         if(self.allowsMultipleSelection == NO) {
             [_selectedManagedObjects removeAllObjects];
         }
